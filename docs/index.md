@@ -11,7 +11,7 @@ Authors: Markus Neteler, Carmen Tawalika, Anika Weinmann, Guido Riembauer, mundi
 
 URL of this dcument: [https://actinia-org.github.io/actinia-introduction/](https://actinia-org.github.io/actinia-introduction/)
 
-This workshop is a fork of [https://neteler.gitlab.io/actinia-introduction](https://neteler.gitlab.io/actinia-introduction). The initial workshop has a more detailed chapter about ace - the actinia command execution. This workshop focuses more on the "bare" HTTP API from actinia and extended excercises.
+This workshop is a fork of [https://neteler.gitlab.io/actinia-introduction](https://neteler.gitlab.io/actinia-introduction) and focuses more on the "bare" HTTP API from actinia and extended excercises.
 
 *Last update: 23 Aug 2022*
 
@@ -43,8 +43,6 @@ This requires some software to be installed:
     * [jq](https://stedolan.github.io/jq/download/), a lightweight and flexible command-line JSON processor
     * <a href="https://www.qgis.org/en/site/forusers/download.html">QGIS</a>
 
-The "ace - actinia command execution" section is a demonstration only. To dive deeper into this topic,
-you can follow [these installation instructions](https://neteler.gitlab.io/actinia-introduction/#preparation_1).
 
 Note: We will use the demo actinia server at [https://actinia.mundialis.de/](https://actinia.mundialis.de/) - hence Internet connection is required.
 
