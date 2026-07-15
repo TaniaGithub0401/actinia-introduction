@@ -8,7 +8,7 @@
     <title>About the trainers - A gentle introduction to actinia</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../extra.css" rel="stylesheet" />
     
       <script>
@@ -18,12 +18,11 @@
         var mkdocs_page_url = "/actinia-introduction/about/";
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +34,7 @@
           <a href=".." class="icon icon-home"> A gentle introduction to actinia
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -66,7 +65,7 @@
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">About the trainers</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">About the trainers</a>
     <ul class="current">
     </ul>
                 </li>
@@ -84,8 +83,8 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>About the trainers</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">About the trainers</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -96,9 +95,9 @@
               
                 <h1 id="about-the-trainers">About the trainers</h1>
 <p>Markus Neteler is co-founder of <a href="https://www.mundialis.de">mundialis</a> GmbH &amp; Co. KG, Bonn, Germany. From 2001-2015 he worked as a researcher in Italy. Markus is co-founder of OSGeo and since 1998, coordinator of the GRASS GIS development (for details, see his private <a href="https://grassbook.org/neteler/">homepage</a>).</p>
-<p>Carmen Tawalika started working for mundialis in 2015 as the first developer. Growing together with the company, her passion for open source software never faded. In 2016 she was in the FOSS4G Bonn organization team and responsible for the workshops. In 2019 she became a member of OSGeo. She is heavily involved in the development of <a href="https://github.com/mundialis/actinia_core">actinia</a> and a member of the PSC.</p>
-<p>Anika Weinmann studied geodesy and geoinformation at the University of Bonn. In her master thesis she specializes in solving remote sensing tasks with a Deep Learning approach. She started working for mundialis in 2018, contributes to <a href="https://github.com/mundialis/actinia_core">actinia</a> and is a member of the PSC.</p>
-<p>Guido Riembauer studied Geoinformation and Visualisation at University of Potsdam and worked as a trainee for ESA’s Earth Observation Programme before joining mundialis in early 2020. He is a developer and data analyst at mundialis and has specialized in (radar) remote sensing. Guido is involved in the development of <a href="https://github.com/OSGeo/grass-addons">GRASS-GIS</a> and <a href="https://github.com/mundialis/actinia_core">actinia</a> modules to import and analyse Copernicus Sentinel data.</p>
+<p>Carmen Tawalika started working for mundialis in 2015 as the first developer. Growing together with the company, her passion for open source software never faded. In 2016 she was in the FOSS4G Bonn organization team and responsible for the workshops. In 2019 she became a member of OSGeo. She is heavily involved in the development of <a href="https://github.com/actinia-org/actinia-core">actinia</a> and a member of the PSC.</p>
+<p>Anika Weinmann studied geodesy and geoinformation at the University of Bonn. In her master thesis she specializes in solving remote sensing tasks with a Deep Learning approach. She started working for mundialis in 2018, contributes to <a href="https://github.com/actinia-org/actinia-core">actinia</a> and is a member of the PSC.</p>
+<p>Guido Riembauer studied Geoinformation and Visualisation at University of Potsdam and worked as a trainee for ESA’s Earth Observation Programme before joining mundialis in early 2020. He is a developer and data analyst at mundialis and has specialized in (radar) remote sensing. Guido is involved in the development of <a href="https://github.com/OSGeo/grass-addons">GRASS-GIS</a> and <a href="https://github.com/actinia-org/actinia-core">actinia</a> modules to import and analyse Copernicus Sentinel data.</p>
 <h1 id="any-feedback">Any feedback?</h1>
 <p>Please write to me at: neteler @ mundialis.de</p>
 <ul>
@@ -136,14 +135,15 @@
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

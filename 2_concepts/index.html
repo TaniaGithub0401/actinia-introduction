@@ -8,7 +8,7 @@
     <title>Some Concepts - A gentle introduction to actinia</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../extra.css" rel="stylesheet" />
     
       <script>
@@ -18,12 +18,11 @@
         var mkdocs_page_url = "/actinia-introduction/2_concepts/";
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +34,7 @@
           <a href=".." class="icon icon-home"> A gentle introduction to actinia
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -46,7 +45,7 @@
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">Some Concepts</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Some Concepts</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#why-cloud-computing">Why cloud computing?</a>
     </li>
@@ -110,8 +109,8 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>Some Concepts</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Some Concepts</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -147,36 +146,38 @@ The tutorial includes, however, a brief introduction to <strong>REST</strong> (R
 <li>lack of cloud abstraction, needed for easier move between vendors and providers.</li>
 </ul>
 <h2 id="overview-actinia">Overview actinia</h2>
-<p>Actinia (<a href="https://actinia.mundialis.de/">https://actinia.mundialis.de/</a>) is an <strong>open source REST API for scalable, distributed, high performance processing of geospatial and Earth observation data</strong> that uses mainly GRASS GIS for computational tasks. Core functionality includes the processing of single scenes and time series of satellite images, of raster and vector data. With the existing (e.g. Landsat) and Copernicus Sentinel big geodata pools which are growing day by day, actinia is designed to follow the paradigm of bringing algorithms to the cloud stored geodata. Actinia is an OSGeo Community Project since 2019. The source code is available on GitHub at <a href="https://github.com/mundialis/actinia_core">https://github.com/mundialis/actinia_core</a>. It is written in Python and uses Flask, Redis, and other components.</p>
+<p>Actinia (<a href="https://actinia.mundialis.de/">https://actinia.mundialis.de/</a>) is an <strong>open source REST API for scalable, distributed, high performance processing of geospatial and Earth observation data</strong> that uses mainly GRASS GIS for computational tasks. Core functionality includes the processing of single scenes and time series of satellite images, of raster and vector data. With the existing (e.g. Landsat) and Copernicus Sentinel big geodata pools which are growing day by day, actinia is designed to follow the paradigm of bringing algorithms to the cloud stored geodata. Actinia is an OSGeo Community Project since 2019. The source code is available on GitHub at <a href="https://github.com/actinia-org/actinia-core">https://github.com/actinia-org/actinia-core</a>. It is written in Python and uses Flask, Valkey, and other components.</p>
 <h3 id="components-of-actinia">Components of actinia</h3>
 <p>Actinia is composed of several components.</p>
 <p>Core system:</p>
 <ul>
-<li><a href="https://github.com/mundialis/actinia_core/">actinia-core</a>: an open source REST API for scalable, distributed and, high performance processing of geographical data that uses mainly GRASS GIS for computational tasks. It can be installed as is or enhanced with multiple plugins.</li>
+<li><a href="https://github.com/actinia-org/actinia-core/">actinia-core</a>: an open source REST API for scalable, distributed and, high performance processing of geographical data that uses mainly GRASS GIS for computational tasks. It can be installed as is or enhanced with multiple plugins.</li>
 </ul>
 <p>API:</p>
 <ul>
-<li><a href="https://github.com/mundialis/actinia-api">actinia-api</a>: API description for actinia_core and official plugins.</li>
+<li><a href="https://github.com/actinia-org/actinia-api">actinia-api</a>: API description for actinia_core and official plugins.</li>
 </ul>
 <p>Plugins:</p>
 <ul>
-<li><a href="https://github.com/mundialis/actinia-module-plugin">actinia-module-plugin</a>: contains module self-description and process-chain-template management and processing</li>
-<li><a href="https://github.com/mundialis/actinia-metadata-plugin">actinia-metadata-plugin</a>: contains communication with a metadata catalog via OGC-CSW, in usage with GeoNetwork opensource</li>
-<li><a href="https://github.com/mundialis/actinia_statistic_plugin">actinia-statistic-plugin</a>: designed for computing raster map and raster-time-series statistics for categorical and continuous data</li>
-<li><a href="https://github.com/mundialis/actinia_satellite_plugin">actinia-satellite-plugin</a>: designed for efficient satellite data handling, especially Landsat and Sentinel-2 scenes</li>
-<li><a href="https://github.com/mundialis/actinia-stac-plugin">actinia-stac-plugin</a>: Plugin for actinia to read STAC catalogs and retrieve data for processing</li>
-<li><a href="https://github.com/mundialis/actinia-tiling-plugin">actinia-tiling-plugin</a>: Plugin for actinia to tile areas, e.g. to process them in parallel</li>
-<li><a href="https://github.com/mundialis/actinia-parallel-plugin">actinia-parallel-plugin</a>: Plugin for actinia to allow to specify parallel processes for faster processing (WIP)</li>
-<li>(<a href="https://github.com/mundialis/actinia-example-plugin">actinia-example-plugin</a>: A small example plugin for actinia-core. This can be used as base for developing an own plugin)</li>
+<li><a href="https://github.com/actinia-org/actinia-module-plugin">actinia-module-plugin</a>: contains module self-description and process-chain-template management and processing</li>
+<li><a href="https://github.com/actinia-org/actinia-metadata-plugin">actinia-metadata-plugin</a>: contains communication with a metadata catalog via OGC-CSW, in usage with GeoNetwork opensource</li>
+<li><a href="https://github.com/actinia-org/actinia-statistic-plugin">actinia-statistic-plugin</a>: designed for computing raster map and raster-time-series statistics for categorical and continuous data</li>
+<li><a href="https://github.com/actinia-org/actinia-stac-plugin">actinia-stac-plugin</a>: Plugin for actinia to read STAC catalogs and retrieve data for processing</li>
+<li><a href="https://github.com/actinia-org/actinia-tiling-plugin">actinia-tiling-plugin</a>: Plugin for actinia to tile areas, e.g. to process them in parallel</li>
+<li><a href="https://github.com/actinia-org/actinia-parallel-plugin">actinia-parallel-plugin</a>: Plugin for actinia to allow to specify parallel processes for faster processing (WIP)</li>
+<li>
+<p>(<a href="https://github.com/actinia-org/actinia-example-plugin">actinia-example-plugin</a>: A small example plugin for actinia-core. This can be used as base for developing an own plugin)
+Related:</p>
+</li>
+<li>
+<p><a href="https://github.com/Open-EO/openeo-grassgis-driver">openeo-grassgis-driver</a>: OpenEO driver for GRASS GIS/actinia. Backend description at <a href="https://openeo.mundialis.de/.well-known/openeo">https://openeo.mundialis.de/.well-known/openeo</a></p>
+</li>
 </ul>
-<p>Related:</p>
-<ul>
-<li><a href="https://github.com/Open-EO/openeo-grassgis-driver">openeo-grassgis-driver</a>: OpenEO driver for GRASS GIS/actinia. Backend description at <a href="https://openeo.mundialis.de/.well-known/openeo">https://openeo.mundialis.de/.well-known/openeo</a></li>
-</ul>
-<p><center>
+<center>
 <a href="../img/actinia-plugins.png"><img src="../img/actinia-plugins.png" width="80%"></a><br>
 Fig. 1: Components of actinia (core and plugins)
-</center></p>
+</center>
+
 <p><strong>Functionality beyond GRASS GIS</strong></p>
 <p>Actinia is not only a REST interface to GRASS GIS, but it offers the possibility to extend its functionality with other software (ESA SNAP, GDAL, ...). To integrate other than GRASS GIS software, a wrapper script is to be written (style: as a GRASS GIS Addon Python script) which then includes the respective function calls of the software to be integrated. Calling shell commands in an actinia process chain is also possible but limited due to security risks.</p>
 <p><strong>Persistent and ephemeral databases</strong></p>
@@ -185,10 +186,11 @@ Fig. 1: Components of actinia (core and plugins)
 <p>In the cloud computing context these differences are relevant as cost incurs when storing data.</p>
 <p>Accordingly, actinia offers two modes of operation: persistent and ephemeral processing. In particular, the <strong>actinia server</strong> is typically deployed on a server with access to a persistent GRASS GIS database (PDB) and optionally to one or more GRASS GIS user databases (UDB).</p>
 <p>Actinia is deployed multiple times as so called <strong>actinia nodes</strong> (separate physically distinct machines) where the actual computations are performed. They can be deployed with the help of cloud technology like e.g. kubernetes, openshift and docker-swarm. This technology then acts as a <strong>load balancer</strong>, distributing jobs to actinia nodes. Results are either stored in GRASS UDBs in GRASS native format or directly exported to a different data format (see Fig. 2).</p>
-<p><center>
+<center>
 <a href="../img/actinia_PDB_UDB.png"><img src="../img/actinia_PDB_UDB.png" width="60%"></a><br>
-Fig. 2: Persistent and ephemeral storage with actinia nodes (source: <a href="https://mundialis.github.io/foss4g2019/grass-gis-in-the-cloud-actinia-geoprocessing/index.html">mundialis FOSS4G talk 2019</a>)
-</center></p>
+Fig. 2: Persistent and ephemeral storage with actinia nodes (source: [mundialis FOSS4G talk 2019](https://mundialis.github.io/foss4g2019/grass-gis-in-the-cloud-actinia-geoprocessing/index.html))
+</center>
+
 <p><strong>Architecture of actinia</strong></p>
 <p>Several <strong>components</strong> play a role in a cloud deployment of actinia (for an example, see Fig. 3):</p>
 <ul>
@@ -197,28 +199,29 @@ Fig. 2: Persistent and ephemeral storage with actinia nodes (source: <a href="ht
 <li>interface layer:<ul>
 <li>most importantly, the <strong>REST API</strong>,</li>
 <li><a href="https://github.com/Open-EO/openeo-grassgis-driver">openEO GRASS GIS driver</a>,</li>
-<li>ace - <a href="https://github.com/mundialis/ace">actinia command execution</a> (to be run in a GRASS GIS session),</li>
+<li>ace - <a href="https://github.com/actinia-org/ace">actinia command execution</a> (to be run in a GRASS GIS session),</li>
 </ul>
 </li>
-<li>metadata management: interface to Geonetwork Opensource via OGC-CSW, managed through <a href="https://github.com/mundialis/actinia-metadata-plugin">actinia-metadata-plugin</a>,</li>
-<li>module self-description and process-chain-template management and processing, managed through <a href="https://github.com/mundialis/actinia-module-plugin">actinia-module-plugin</a>,</li>
+<li>metadata management: interface to Geonetwork Opensource via OGC-CSW, managed through <a href="https://github.com/actinia-org/actinia-metadata-plugin">actinia-metadata-plugin</a>,</li>
+<li>module self-description and process-chain-template management and processing, managed through <a href="https://github.com/actinia-org/actinia-module-plugin">actinia-module-plugin</a>,</li>
 <li>database system:<ul>
-<li>job management in a Redis database,</li>
+<li>job management in a Valkey database,</li>
 <li>the GRASS GIS database (here are the geo/EO data stored!),</li>
 </ul>
 </li>
 <li>connection to OGC Web services for output:</li>
 <li>Geoserver integration.</li>
 </ul>
-<p><center>
+<center>
 <a href="../img/actinia_architecture_FTTH.png"><img src="../img/actinia_architecture_FTTH.png" width="60%"></a><br>
 Fig. 3: Example architecture of an actinia deployment (source: mundialis)
-</center></p>
+</center>
+
 <h3 id="deployment">Deployment</h3>
 <p>In short, deployment means starting software, usually in an automated way on one or more computer nodes. There are a number of technologies for this. In particular, virtualisation plays an important role here, which avoids a high dependency on hardware and software characteristics through abstraction.</p>
 <p>An aim is to operate <strong>Infrastructure as Code</strong> (<a href="https://en.wikipedia.org/wiki/Infrastructure_as_code">IaC</a>), i.e. to have a set of scripts which order the needed computational resources in the cloud, setup the network and storage topology, connect to the nodes, install them with the needed software (usually docker based, i.e. so-called containers are launched from prepared images) and processing chains. Basically, the entire software part of a cloud computing infrastructure is launched "simply" through scripts with the advantage of restarting it easily as needed, maintain it and migrate to other hardware.</p>
 <p><strong>CI/CD</strong> systems (continuous integration/continuous deployment) allow to define dependencies, prevent from launching broken software and allow the versioning of the entire software stack.</p>
-<p>With respect to actinia, <strong>various ways of <a href="https://github.com/mundialis/actinia_core/tree/master/docker">deployment</a></strong> are offered: local installation, docker, docker-compose, docker-swarm, Openshift, and kubernetes.</p>
+<p>With respect to actinia, <strong>various ways of <a href="https://github.com/actinia-org/actinia-core/tree/master/docker">deployment</a></strong> are offered: local installation, docker, docker-compose, docker-swarm, Openshift, and kubernetes.</p>
 <h2 id="rest-api-and-geoprocessing-basics">REST API and geoprocessing basics</h2>
 <!--
 (duration: 20 min)
@@ -331,14 +334,15 @@ The final part of an endpoint are the query parameters. Using query parameters y
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>
